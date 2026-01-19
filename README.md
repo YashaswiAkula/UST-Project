@@ -1,420 +1,151 @@
-# Customer Support Ticketing System
+# 🎫 Customer Support Ticketing System
 
+A **role-based customer support ticketing system** built using **FastAPI** and **Tkinter**, designed to manage customer issues efficiently by tracking tickets, assigning support staff, and monitoring resolution progress.
 
+---
 
-#### Overview
+## 📌 Project Description
 
+The **Customer Support Ticketing System** enables organizations to handle customer issues in a structured and transparent manner.  
+It supports ticket lifecycle management, priority handling, role-based access control, and analytics — providing a complete end-to-end support workflow.
 
+---
 
-###### The Customer Support Ticketing System is a desktop application designed to streamline customer support operations. It provides a simple and intuitive interface for users to create, manage, and track support tickets.
+## 🎯 Objectives
 
+- Implement complete ticket lifecycle management
+- Handle priority and status transitions
+- Apply robust exception handling
+- Enforce role-based access control
+- Provide analytics and reporting endpoints
 
+---
 
-#### Features
+## 🛠 Tools & Technologies
 
+| Category | Technology |
+|--------|------------|
+| Programming Language | Python |
+| Backend Framework | FastAPI |
+| Frontend | Tkinter (Desktop UI) |
+| Database | SQLite |
+| Authentication | JWT (Cookie-based) |
+| ORM | SQLAlchemy |
+| Testing | pytest |
+| Version Control | Git |
 
+---
 
-* ###### **User Management**: Allows registration and login with role-based access (Admin and User).
+## 👥 User Roles & Capabilities
 
-###### 
+### 🛡 Admin
+- Manage users
+- Assign tickets
+- Update ticket status
+- View analytics and reports
 
-* ###### **Ticket Management**: Users can submit tickets, while admins can view, update, and close them.
+### 🧑‍🔧 Helper
+- View assigned tickets
+- Update ticket status
+- Add internal comments
 
-###### 
+### 👤 Customer
+- Create tickets
+- View own tickets
+- Add comments
 
-* ###### **Desktop GUI**: Built using Tkinter, providing a user-friendly interface without needing a web browser.
+---
 
-###### 
+## ✨ Key Features
 
-* ###### **Database Integration:** Uses SQLite for storing all user and ticket information locally, ensuring lightweight and fast operations.
+### 🎫 Ticket Management
+- Ticket creation and updates
+- Priority handling
+- Status transitions (Open → In Progress → Resolved → Closed)
 
-###### 
+### 🧑‍💼 Role-Based Access
+- Separate dashboards for Admin, Helper, and Customer
+- Permission-based access enforcement
 
-* ###### **Easy to Use:** Designed for small to medium-sized teams or businesses that want a simple, offline ticket tracking system.
+### 💬 Comment System
+- Public comments (customer-visible)
+- Internal comments (staff-only)
+- Ticket-wise discussion history
 
+### 📊 Analytics & Reporting
+- Ticket statistics
+- Staff performance tracking
+- Resolution progress insights
 
+### 🔐 Authentication & Security
+- JWT-based authentication (cookie-based)
+- Secure session handling
+- Logout functionality
 
-#### Tech Stack
+### 🎨 User Interface
+- Dark-themed Tkinter UI
+- Desktop-friendly experience
+- Clean and intuitive navigation
 
+---
+```md
+## 🗂 Project Structure
 
-
-###### - Frontend / GUI:Python Tkinter
-
-###### - Backend / LogicPython
-
-###### - Database:SQLite
-
-###### - Version Control: Git \& GitHub
-
-
-
-
-
-#### Project Structure
-
-
-
+```bash
 PROJECT-CUSTOMER-TICKET/
-
-│
-
-├── app/        
-
-│   ├── \_\_init\_\_.py
-
-│   ├── app.py                  
-
-│   ├── auth.py                
-
-│   ├── users.py               
-
-│   ├── allocation.py          
-
-│   ├── analytics.py             
-
+├── app/
+│   ├── app.py
+│   ├── auth.py
+│   ├── users.py
+│   ├── allocation.py
+│   ├── analytics.py
 │   ├── database.py
-
-│   ├── models.py               
-
-│   ├── schemas.py               
-
-│   ├── permissions.py           
-
-│   ├── demo\_roles.py            
-
-│   └── tickets.db              
-
-├── frontend/                    
-
+│   ├── models.py
+│   ├── schemas.py
+│   ├── permissions.py
+│   ├── demo_roles.py
+│   └── tickets.db
+│
+├── frontend/
 │   ├── main.py
-
-│   ├── api\_client.py
-
+│   ├── api_client.py
 │   ├── theme.py
-
 │   ├── utils.py
-
-│   ├── auth\_ui.py
-
-│   ├── admin\_ui.py
-
-│   ├── helper\_ui.py
-
-│   ├── customer\_ui.py
-
-│   └── comments\_ui.py
-
+│   ├── auth_ui.py
+│   ├── admin_ui.py
+│   ├── helper_ui.py
+│   ├── customer_ui.py
+│   └── comments_ui.py
 │
-
-├── tests/                      
-
-│   ├── \_\_pycache\_\_
-
-│   ├── conftest.py
-
-│   ├── test\_allocation.py
-
-│   ├── test\_api.py
-
-│    ├── test\_permissions.py
-
-│    ├── test\_users.py
-
-│   └── test\_database.py
-
+├── tests/
+│   ├── test_auth.py
+│   ├── test_users.py
+│   ├── test_tickets.py
+│   └── test_comments.py
 │
-
 ├── requirements.txt
-
 └── README.md
-
-
-
-
-
-#### Installation \& Setup
-
-
-
-##### 1\. Create Virtual Environment
-
-
-
-###### &nbsp;       python -m venv venv
-
-###### &nbsp;       source venv/bin/activate   # Linux/Mac
-
-###### &nbsp;       venv\\Scripts\\activate      # Windows
-
-
-
-
-
-##### 2\. Install Dependencies
-
-
-
-###### &nbsp;       pip install -r requirements.txt
-
-
-
-
-
-##### 3\. Run the Application
-
-
-
-###### &nbsp;     python app/main.py
-
-
-
-
-
-#### Application Functionality
-
-
-
-* ###### User Management:
-
-&nbsp;       - User registration and login
-
-&nbsp;       - Role-based access (Admin / User)
-
-
-
-* ###### Ticket Management:
-
-&nbsp;        - Create new support tickets
-
-&nbsp;        - View existing tickets
-
-&nbsp;        - Update ticket status
-
-&nbsp;        - Close resolved tickets
-
-
-
-* ###### &nbsp;Data Storage:
-
-&nbsp;        - All data is stored locally using SQLite
-
-&nbsp;        - No external APIs or HTTP requests are used
-
-
-
-* ###### Interface:
-
-&nbsp;      - Desktop-based graphical user interface built with Tkinter
-
-&nbsp;      - All operations are performed through the GUI
-
-
-
-
-
-#### View Records 
-
-
-
-###### \- Users can view all previously created support tickets from the application interface.
-
-###### \- Admin users can view all tickets submitted by different users.
-
-###### \- Tickets are fetched directly from the \*\*SQLite database\*\*.
-
-###### \- No HTTP requests or REST APIs are involved.
-
-
-
-#### Search and Filter Tickets
-
-
-
-###### \- Users can search support tickets using keywords such as:
-
-###### &nbsp; - Ticket title
-
-###### &nbsp; - Ticket description
-
-###### &nbsp; - Ticket status
-
-###### \- Admin users can filter tickets based on:
-
-###### &nbsp; - User
-
-###### &nbsp; - Status (Open / In Progress / Closed)
-
-###### \- Search operations are performed directly on the SQLite database.
-
-###### \- Results are displayed in the Tkinter GUI.
-
-
-
-
-
-#### Ticket History and Status Tracking
-
-
-
-###### \- Each support ticket maintains its current status (Open, In Progress, Closed).
-
-###### \- Updates to tickets are stored in the SQLite database.
-
-###### \- Admin users can view ticket details and track status changes.
-
-###### \- All ticket information is accessed directly through the Tkinter GUI.
-
-
-
-#### View Ticket Details
-
-
-
-###### \- Users can view complete details of a support ticket from the application interface.
-
-###### \- Ticket information includes title, description, status, and created date.
-
-###### \- All data is stored and retrieved from the SQLite database.
-
-###### \- File downloads and document versioning are not implemented
-
-###### 
-
-#### Database Schema
-
-###### 
-
-##### &nbsp;Users Table
-
-###### \- id: Primary key
-
-###### \- username: User name
-
-###### \- email: User email
-
-###### \- password: Hashed password
-
-###### \- role: User role (Admin / User)
-
-###### 
-
-##### Tickets Table
-
-###### \- id: Primary key
-
-###### \- title: Ticket title
-
-###### \- description: Issue description
-
-###### \- status: Ticket status (Open, In Progress, Closed)
-
-###### \- created\_at: Ticket creation timestamp
-
-###### \- user\_id: Foreign key referencing Users table
-
-
-
-
-
-#### Data Storage
-
-###### \- The application uses SQLite as a local database.
-
-###### \- All user and ticket information is stored in database tables.
-
-###### \- No external file storage or document uploads are implemented.
-
-###### \- The system is designed for lightweight, local usage.
-
-###### 
-
-#### Security Features
-
-
-
-###### \- User authentication using username and password
-
-###### \- Role-based access control (Admin and User)
-
-###### \- Restricted access to ticket management based on user role
-
-###### \- SQLite database access limited to the application
-
-###### \- Input validation to prevent invalid or empty data entries
-
-
-
-
-
-#### Testing
-
-
-
-###### \- The application was tested manually using the Tkinter graphical user interface.
-
-###### \- User workflows tested include:
-
-###### &nbsp; - User registration and login
-
-###### &nbsp; - Creating new support tickets
-
-###### &nbsp; - Viewing existing tickets
-
-###### &nbsp; - Updating ticket status
-
-###### &nbsp; - Role-based access verification (Admin/User)
-
-###### \- SQLite database entries were verified to ensure correct data storage and retrieval.
-
-
-
-
-
-#### Configuration
-
-
-
-###### \- The application uses SQLite  as the default database.
-
-###### \- Database file is created locally when the application runs.
-
-###### \- No external configuration files are required.
-
-###### \- All settings are handled within the Python source code.
-
-###### 
-
-
-
-#### Future Enhancements
-
-
-
-###### \- Improved user authentication and authorization
-
-###### \- Enhanced role-based access control
-
-###### \- Ticket priority levels (High, Medium, Low)
-
-###### \- Email notifications for ticket updates
-
-###### \- Search and filter improvements
-
-###### \- Report generation for admin users
-
-###### \- Improved UI design using advanced Tkinter widgets
-
-
-
-
-
-#### License
-
-
-
-###### This project is open source and available for educational and learning purposes.
-
-###### 
-
-
+```
+
+## ▶️ How to Run the Project
+
+### 🔹 Backend (FastAPI)
+
+```bash
+uvicorn app.app:app --reload
+```
+### Swagger API Docs:
+```bash
+(http://127.0.0.1:8000/docs)
+```
+### 🔹 Frontend (Tkinter Desktop App)
+```bash
+python frontend/main.py
+```
+### 🧪 Testing
+
+### Run automated tests using:
+```bash
+pytest tests/
+```
 
