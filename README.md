@@ -38,13 +38,13 @@
 
 
 
-###### **- Frontend / GUI:** Python Tkinter
+###### - Frontend / GUI:Python Tkinter
 
-###### **- Backend / Logic:**Python
+###### - Backend / LogicPython
 
-###### **- Database:**SQLite
+###### - Database:SQLite
 
-###### **- Version Control:** Git \& GitHub
+###### - Version Control: Git \& GitHub
 
 
 
@@ -196,7 +196,7 @@ PROJECT-CUSTOMER-TICKET/
 
 * ###### &nbsp;Data Storage:
 
-&nbsp;        - All data is stored locally using \*\*SQLite\*\*
+&nbsp;        - All data is stored locally using SQLite
 
 &nbsp;        - No external APIs or HTTP requests are used
 
@@ -204,7 +204,7 @@ PROJECT-CUSTOMER-TICKET/
 
 * ###### Interface:
 
-&nbsp;      - Desktop-based graphical user interface built with \*\*Tkinter\*\*
+&nbsp;      - Desktop-based graphical user interface built with Tkinter
 
 &nbsp;      - All operations are performed through the GUI
 
@@ -415,5 +415,6 @@ PROJECT-CUSTOMER-TICKET/
 ###### This project is open source and available for educational and learning purposes.
 
 ###### 
+
 
 
