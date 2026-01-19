@@ -2,8 +2,8 @@ import sqlite3
 import logging
 from typing import Optional, List, Dict
 
-from Project.database import update_ticket, get_ticket, get_all_tickets
-from Project.users import is_helper
+from database import update_ticket, get_ticket, get_all_tickets
+from users import is_helper
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
