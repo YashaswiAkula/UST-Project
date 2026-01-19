@@ -269,6 +269,14 @@ async def get_resolution_time(user: User = Depends(get_current_user)):
     }
 
 # ======================
+# AUTH - GET CURRENT USER
+# ====================
+@app.get("/auth/me", tags=["Authentication"])
+async def get_me(user: User = Depends(get_current_user)):
+    return user.to_dict()
+
+
+# ======================
 # HEALTH
 # ======================
 
